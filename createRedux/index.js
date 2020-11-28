@@ -1,26 +1,7 @@
-import { createStore, combineReducers } from './redux.js'
 
-const taskReducer = (state = { tasks: [] }, action) => {
-	switch (action.type) {
-		case 'addTodo':
-			return { ...state, tasks: [...state.tasks, action.payload] }
-		default:
-			return state
-	}
-}
+import { CREATE_POST, DELETE_POST, CREATE_TASK} from '../actions/index.js'
 
-const postReducer = (state = { posts: [] }, action) => {
-	switch (action.type) {
-		case 'addPost':
-			return { ...state, posts: [...state.posts, action.payload] }
-		default:
-			return state
-	}
-}
-
-const reducer = combineReducers({ taskReducer: taskReducer, postReducer: postReducer })
-
-const store = createStore(reducer)
+import { store } from './store/index.js'
 
 store.subscribe(() => {
 	console.log('state in subscribe', store.getState())
@@ -51,7 +32,7 @@ const newTask = () => {
 	const text = document.getElementById('inputTask').value
 	if (text !== '') {
 		store.dispatch({
-			type: 'addTodo',
+			type: CREATE_TASK,
 			payload: text
 		})
 	}
@@ -61,7 +42,7 @@ const newPost = () => {
 	const text = document.getElementById('inputPost').value
 	if (text !== '') {
 		store.dispatch({
-			type: 'addPost',
+			type: CREATE_POST,
 			payload: text
 		})
 	}
