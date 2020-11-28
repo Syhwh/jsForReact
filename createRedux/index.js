@@ -1,10 +1,9 @@
 
-import { CREATE_POST, DELETE_POST, CREATE_TASK} from '../actions/index.js'
+import { CREATE_POST, CREATE_TASK } from './actions/index.js'
 
 import { store } from './store/index.js'
 
 store.subscribe(() => {
-	console.log('state in subscribe', store.getState())
 	const { taskReducer } = store.getState()
 	const { tasks } = taskReducer
 	const taskArray = tasks.map(task => {

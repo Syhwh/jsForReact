@@ -1,5 +1,3 @@
-// create the store function
-
 export const createStore = (reducer, initialState) => {
 	let state = initialState
 	const subscribers = []

@@ -1,4 +1,4 @@
-import { CREATE_POST, DELETE_POST } from '../actions/index.js'
+import { CREATE_POST } from '../actions/index.js'
 
 export const postReducer = (state = { posts: [] }, action) => {
 	switch (action.type) {

@@ -1,4 +1,1 @@
-export const postActions = {
-	CREATE_POST: 'CREATE_POST',
-	DELETE_POST: 'DELETE_POST',
-}
+export const CREATE_POST= 'CREATE_POST'

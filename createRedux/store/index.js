@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from './redux/redux.js'
+import { createStore, combineReducers } from '../redux/redux.js'
 
 import { postReducer, taskReducer } from '../reducers/index.js'
 
